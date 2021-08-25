@@ -1,14 +1,11 @@
-FROM registry.cn-shanghai.aliyuncs.com/lwmeng/node:lts-alpine as build-stage
-LABEL mantainer="linjinbao66@gmail.com"
+FROM node:14 as build-stage
+
 WORKDIR /app
-COPY package*.json ./
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN cnpm install
-COPY . .
+ADD . .
+RUN npm install --registry=https://registry.npm.taobao.org
 RUN npm run build:prod
 
-# production stage
-FROM registry.cn-shanghai.aliyuncs.com/lwmeng/nginx
+FROM nginx
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 EXPOSE 80
