@@ -2,7 +2,7 @@ FROM node:14 as build-stage
 
 WORKDIR /app
 ADD . .
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN npm install
 RUN npm run build:prod
 
 FROM nginx
