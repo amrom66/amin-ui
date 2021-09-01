@@ -1,4 +1,4 @@
-# go-admin-ui
+# amin-ui
 
 ## 简介
 

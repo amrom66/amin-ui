@@ -9,7 +9,7 @@ export default {
   name: 'GoAdminDonate',
   data() {
     return {
-      url: 'http://doc.zhangwj.com/go-admin-site/donate/'
+      url: ''
     }
   },
   methods: {

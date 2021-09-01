@@ -9,7 +9,7 @@ export default {
   name: 'GoAdminGit',
   data() {
     return {
-      url: 'https://github.com/wenjianzhang/go-admin'
+      url: ''
     }
   },
   methods: {
