@@ -2,6 +2,7 @@ FROM node:14 as build-stage
 
 WORKDIR /app
 ADD . .
+RUN git config --global url."https://".insteadOf git://
 RUN npm install -f
 RUN npm run build:prod
 
